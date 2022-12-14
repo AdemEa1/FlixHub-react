@@ -1,12 +1,13 @@
-import React from 'react'
+import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import styled from "styled-components";
 
 const MovieFormat = ({ Poster, Title, Year }) => {
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <Format onClick={() => navigate(`/movie/${imdbID}`) }>        <Wrap>
+    <Format onClick={() => navigate(`/movie/${imdbID}`) }>        
+    <Wrap>
         <img src={Poster} />
     <TextWrapper>
         <div className='text__wrap'>
@@ -17,6 +18,10 @@ const navigate = useNavigate()
     </Wrap>
     </Format>
   )
-}
+};
 
-export default MovieFormat
+export default MovieFormat;
+
+const Format = styled.div``;
+
+const TextWrapper = styled.div``;

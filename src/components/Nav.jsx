@@ -5,25 +5,31 @@ import styled from "styled-components";
 import HomeLogo from "../assets/ABC.png";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import PersonIcon from "@mui/icons-material/Person";
-import CloseIcon from "@mui/icons-material/Close";
+import { useNavigate } from "react-router-dom";
+
 
 const Nav = () => {
+  const navigate = useNavigate();
+
   return (
     <Container className="nav__wrapper">
       <LeftMenu>
-        <Link className="img__wrapper">
-          <img src={HomeLogo} className="cursor-pointer" alt="" />
-        </Link>
+        <figure className="img__wrapper">
+          <img src={HomeLogo} className="cursor-pointer" onClick={() => navigate("/")} />
+        </figure>
         <li className="link__hover">Home</li>
         <li className="link__hover">Tv Shows</li>
         <li className="link__hover">Movies</li>
         <li className="link__hover">Recently Added</li>
         <li className="link__hover">Browse by Language</li>
       </LeftMenu>
-
       <RightMenu>
-      <a className="link__hover cursor-not-allowed"><NotificationsIcon /></a>
-        <a className="link__hover click cursor-pointer"><PersonIcon /></a>
+      <a className="cursor-not-allowed"><NotificationsIcon /></a>
+      <Link to="/account">
+      <a className="cursor-pointer">
+      <PersonIcon />
+      </a>
+      </Link>
       </RightMenu>
     </Container>
   );
@@ -62,6 +68,6 @@ const RightMenu = styled.div`
   a {
     transform: scale(1.2);
     color: #242424;
-    margin: 0 12px;
+    margin: 0 6px;
   }
 `;
