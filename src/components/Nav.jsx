@@ -15,7 +15,7 @@ const Nav = () => {
     <Container className="nav__wrapper">
       <LeftMenu>
         <figure className="img__wrapper">
-          <img src={HomeLogo} className="cursor-pointer" onClick={() => navigate("/")} />
+          <img src={HomeLogo} className="nav__logo cursor-pointer" onClick={() => navigate("/")} />
         </figure>
         <li className="link__hover">Home</li>
         <li className="link__hover">Tv Shows</li>

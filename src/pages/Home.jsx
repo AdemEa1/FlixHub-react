@@ -6,37 +6,40 @@ import "../components/App.css";
 import { Paper } from "@mui/material";
 
 const Home = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchData, setSearchData] = useState("");
   const navigate = useNavigate();
 
-  const onhandleSubmit = (e) => {
+  function handleEvent(e) {
     e.preventDefault();
+  }
 
-    if (searchTerm) {
-      navigate(`/search/${searchTerm}`);
+  function handleInput() {
+    searchData !== "" && navigate(`/movieland/${searchData}`);
+  }
 
-      setSearchTerm("");
-    }
-  };
 
   return (
-    <Paper component="form" onSubmit={onhandleSubmit}>
+    <Paper component="form">
     <Header>
     <TextArea>
         <h1>FLIXHUB.co</h1>
         <h3>FlixHub is the greatest website for you and your family to stream your favourite movies and Tv shows with such ease.</h3>
     </TextArea>
     <SearchArea>
-        <form>
+        <form onSubmit={handleEvent}>
         <input
             className="search-bar"
             placeholder="Search..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}/>
+            onKeyPress={(event) => {
+              event.key === "Enter" && handleInput();
+            }}
+            onChange={(event) => setSearchData(event.target.value)}
+            />
     <SearchIcon
             className="search--icon click"
             type="submit"
-            aria-label="search"/>
+            onClick={() => handleInput()}
+            />
         </form>
     </SearchArea>
     </Header>

@@ -43,7 +43,7 @@ a {
   align-items: center;
 }
 
-img {
+.nav__logo {
   width: 100%;
   background-color: transparent;
   filter: invert(1);
@@ -79,4 +79,9 @@ img {
 
 .search--icon:hover {
   transition: all 300ms ease-in-out;
+}
+
+.page__wrap:hover {
+  cursor: pointer;
+  transform: scale(1.1); 
 }
