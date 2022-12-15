@@ -76,11 +76,13 @@ h1 {
   width: 100%;
   font-size: 16px;
   color: #fff;
+  font-weight: 600;
 }
 
 p {
   font-size: 14px;
   color: #fff;
+  font-weight: 600;
 }
 
 `;
