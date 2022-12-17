@@ -7,7 +7,6 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import PersonIcon from "@mui/icons-material/Person";
 import { useNavigate } from "react-router-dom";
 
-
 const Nav = () => {
   const navigate = useNavigate();
 
@@ -15,7 +14,10 @@ const Nav = () => {
     <Container className="nav__wrapper">
       <LeftMenu>
         <figure className="img__wrapper">
-          <img src={HomeLogo} className="nav__logo cursor-pointer" onClick={() => navigate("/")} />
+          <img
+            src={HomeLogo}
+            className="nav__logo cursor-pointer"
+            onClick={() => navigate("/")}/>
         </figure>
         <li className="link__hover">Home</li>
         <li className="link__hover">Tv Shows</li>
@@ -24,12 +26,14 @@ const Nav = () => {
         <li className="link__hover">Browse by Language</li>
       </LeftMenu>
       <RightMenu>
-      <a className="cursor-not-allowed"><NotificationsIcon /></a>
-      <Link to="/account">
-      <a className="cursor-pointer">
-      <PersonIcon />
-      </a>
-      </Link>
+        <a className="cursor-not-allowed">
+          <NotificationsIcon />
+        </a>
+        <Link to="/account">
+          <a className="cursor-pointer">
+            <PersonIcon />
+          </a>
+        </Link>
       </RightMenu>
     </Container>
   );

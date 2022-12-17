@@ -85,3 +85,16 @@ a {
   cursor: pointer;
   transform: scale(1.1);
 }
+
+.movie__img--skeleton {
+  width: 100%;
+  max-width: 250px;
+  height: 320px;
+  background-color: rgb(204, 204, 204);
+  margin-bottom: 8px;
+}
+
+.skeleton {
+  background-color: rgb(227, 227, 227) !important;
+  margin-bottom: 8px;
+}

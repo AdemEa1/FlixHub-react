@@ -6,43 +6,42 @@ import "../components/App.css";
 import { Paper } from "@mui/material";
 
 const Home = () => {
-  const [searchData, setSearchData] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
-  function handleEvent(e) {
+  function onhandleSubmit(e) {
     e.preventDefault();
   }
 
   function handleInput() {
-    searchData !== "" && navigate(`/movieland/${searchData}`);
+    searchTerm !== "" && navigate(`/movieland/${searchTerm}`);
   }
-
 
   return (
     <Paper component="form">
-    <Header>
-    <TextArea>
-        <h1>FLIXHUB.co</h1>
-        <h3>FlixHub is the greatest website for you and your family to stream your favourite movies and Tv shows with such ease.</h3>
-    </TextArea>
-    <SearchArea>
-        <form onSubmit={handleEvent}>
-        <input
-            className="search-bar"
-            placeholder="Search..."
-            onKeyPress={(event) => {
-              event.key === "Enter" && handleInput();
-            }}
-            onChange={(event) => setSearchData(event.target.value)}
+      <Header>
+        <TextArea>
+          <h1>FLIXHUB.co</h1>
+          <h3>FlixHub is the greatest website for you and your family to stream your favourite movies and Tv shows with such ease.</h3>
+        </TextArea>
+        <SearchArea>
+          <form onSubmit={onhandleSubmit}>
+            <input
+              className="search-bar"
+              placeholder="Search..."
+              onKeyPress={(event) => {
+                event.key === "Enter" && handleInput();
+              }}
+              onChange={(event) => setSearchTerm(event.target.value)}
             />
-    <SearchIcon
-            className="search--icon click"
-            type="submit"
-            onClick={() => handleInput()}
+            <SearchIcon
+              className="search--icon click"
+              type="submit"
+              onClick={() => handleInput()}
             />
-        </form>
-    </SearchArea>
-    </Header>
+          </form>
+        </SearchArea>
+      </Header>
     </Paper>
   );
 };
