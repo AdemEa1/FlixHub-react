@@ -26,6 +26,8 @@ const MovieFormat = ({ Poster, Title, Year, imdbID }) => {
 
   return (
     <Format onClick={() => navigate(`/movie/${imdbID}`)}>
+      {img ? (
+        
           <Wrap className="page__wrap">
             <img src={Poster} className="wrap__img" />
             <TextWrapper>
@@ -35,7 +37,9 @@ const MovieFormat = ({ Poster, Title, Year, imdbID }) => {
               </div>
             </TextWrapper>
           </Wrap>
-    </Format>
+      ) : (
+          <div className="movie__img--skeleton"></div>
+      )}    </Format>
   );
 };
 
