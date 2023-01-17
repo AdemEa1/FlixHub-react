@@ -13,9 +13,9 @@ const MovieHome = () => {
     fetchVideosData(id);
     }, []);
   
-    async function fetchVideosData(videosElem) {
+    async function fetchVideosData(id) {
     const { data } = await axios.get(
-    `https://www.omdbapi.com/?apikey=${API_KEY}&i=${videosElem}`
+    `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`
     );
     setVideos(data);
     }
