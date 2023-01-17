@@ -7,19 +7,18 @@ import styled from "styled-components";
 
 const MovieHome = () => {
     const API_KEY = `b2490897`;
-    const [videos, setVideos] = useState({});
+    const [videos, setVideos] = useState([]);
     const { id } = useParams();
     useEffect(() => {
     fetchVideosData(id);
     }, []);
   
-    async function fetchVideosData(id) {
+    async function fetchVideosData() {
     const { data } = await axios.get(
     `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`
     );
     setVideos(data);
     }
-
 
   return (
     <MovieDataContainer>
